@@ -27,4 +27,4 @@ ComM aggregates the EIRA / ERA vectors from different bus systems resulting in o
 ERA 用于带转发的系统上。
 
 
-![[Pasted image 20251111195432.png]]
+![](resources/Pasted%20image%2020251111195432.png)

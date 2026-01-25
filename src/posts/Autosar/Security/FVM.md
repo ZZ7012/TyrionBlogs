@@ -1,5 +1,5 @@
-![[Pasted image 20251013160456.png]]![[Pasted image 20251013160446.png]]
-![[Pasted image 20251013160446 1.png]]上图讲解：
+![](resources/Pasted%20image%2020251013160456.png)![](resources/Pasted%20image%2020251013160446.png)
+![](resources/Pasted%20image%2020251013160446%201.png)上图讲解：
 
 **Master ECU 主节点**：
 通过周期性发送同步报文，给从节点分发TripCnt, RstCnt。

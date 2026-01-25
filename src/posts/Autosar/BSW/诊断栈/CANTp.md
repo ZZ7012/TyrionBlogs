@@ -1,10 +1,3 @@
-
-
-![[Pasted image 20250919145517.png]]
-
-![[Pasted image 20250919145551.png]]
-
-![[Pasted image 20250919145610.png]]
 **FS** (flow state) 流状态： 用于记录当前的流量控制情况，包括发送方可以发送的数据量、接收方的处理能力等信息。暴力理解，一共三种情况。
 
 FS=0  请继续发送（接收能力完全没问题）
@@ -34,19 +27,18 @@ https://blog.csdn.net/hjt6927818/article/details/123794049
 
 
 
-- _**P2Server：**_ 表示从ECU接收到请求消息到开始发送响应消息之间的定时器性能要求数值，通常取50ms。
-- - _**P2Client:**_ Tester在成功发送完请求消息后等待服务器发送的响应时的超时设置，略大于P2Server。
-- - _**P2*Server：**_ 表示从ECU发送了NRC为0x78的否定响应消息到开始发送下一个响应消息之间的additional max.time，通常取5000ms。
-- - _**P2*Client：**_ 当客户端在接收到否定响应码为0x78的否定响应后等待服务器发送响应时的additional timeout。
+- _**P2Server：**_ 表示从ECU接收到请求消息到开始发送响应消息之间的定时器性能要求数值，通常取50ms。
+- - _**P2Client:**_ Tester在成功发送完请求消息后等待服务器发送的响应时的超时设置，略大于P2Server。
+- - _**P2*Server：**_ 表示从ECU发送了NRC为0x78的否定响应消息到开始发送下一个响应消息之间的additional max.time，通常取5000ms。
+- - _**P2*Client：**_ 当客户端在接收到否定响应码为0x78的否定响应后等待服务器发送响应时的additional timeout。
 **S3Client**：发送下个 TesterPresent 以保持在非默认会话模式的时间；
 **S3Server**：保持在非默认会话下的超时时间，超时后返回默认会话模式 。
 
 **P3Client_Phys**：Tester从成功发送物理寻址开始计时到下一次发送物理寻址的时间间隔 ；
 **P3Client_Func**：Tester从成功发送功能寻址开始计时到下一次发送物理寻址的时间间隔 。
-- ![[Pasted image 20251009181751.png]]
-- ![[Pasted image 20251009181813.png]]
-**CANTP_TX_BURST_MODE** 
-CANTP_TX_BURST_MODE 是 AUTOSAR CAN Transport Layer (CANTP) 模块的一个配置参数。它主要用于控制发送方在传输多帧数据时的行为模式。
 
-- 当启用时（TRUE）： 发送方会尽可能快、不间断地连续发送连续帧，直到整个多帧报文传输完毕。这旨在提高带宽利用率，减少总传输时间。
-- 当禁用时（FALSE）： 发送方在发送一个连续帧后，会等待接收方回复一个流控制帧，然后才发送下一个连续帧。这是更保守、兼容性更好的标准模式。
+**CANTP_TX_BURST_MODE** 
+CANTP_TX_BURST_MODE 是 AUTOSAR CAN Transport Layer (CANTP) 模块的一个配置参数。它主要用于控制发送方在传输多帧数据时的行为模式。
+
+- 当启用时（TRUE）： 发送方会尽可能快、不间断地连续发送连续帧，直到整个多帧报文传输完毕。这旨在提高带宽利用率，减少总传输时间。
+- 当禁用时（FALSE）： 发送方在发送一个连续帧后，会等待接收方回复一个流控制帧，然后才发送下一个连续帧。这是更保守、兼容性更好的标准模式。
