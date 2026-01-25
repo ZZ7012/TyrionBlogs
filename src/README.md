@@ -4,8 +4,8 @@ layout: Blog
 icon: house
 title: Blog Home
 heroImage: https://theme-hope-assets.vuejs.press/logo.svg
-heroText: The name of your blog
-tagline: You can put your slogan here
+heroText: Tyrion's blogs
+tagline: Just do it
 heroFullScreen: true
 projects:
   - icon: folder-open
@@ -41,7 +41,7 @@ projects:
 footer: customize your footer text
 ---
 
-This is a blog home page demo.
+This is Tyrion‘s blogs home page.
 
 To use this layout, you should set both `layout: Blog` and `home: true` in the page front matter.
 
