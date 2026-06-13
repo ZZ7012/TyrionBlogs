@@ -2,7 +2,9 @@
 title: SecOC
 ---
 
-![Pasted image 20251209232138.png](./resources/Pasted_image_20251209232138.png)
+
+
+![Pasted-image-20251209232138.png](./resources/Pasted-image-20251209232138.png)
 If the authentication build counter has reached the configuration value **SecOCAuthenticationBuildAttempts** the SecOC module shall remove the Authentic I-PDU from its internal buffer and shall drop the received message. 
 The VerificationResultType shall be set to **SECOC_AUTHENTICATIONBUILDFAILURE**. 
 

@@ -1,7 +1,14 @@
+---
+title: CANTp
+---
 
 
-> 图片丢失，待补充
 
+> [!warning] 图片丢失: Pasted image 20250919145517.png
+
+> [!warning] 图片丢失: Pasted image 20250919145551.png
+
+> [!warning] 图片丢失: Pasted image 20250919145610.png
 **FS** (flow state) 流状态： 用于记录当前的流量控制情况，包括发送方可以发送的数据量、接收方的处理能力等信息。暴力理解，一共三种情况。
 
 FS=0  请继续发送（接收能力完全没问题）
@@ -40,7 +47,8 @@ https://blog.csdn.net/hjt6927818/article/details/123794049
 
 **P3Client_Phys**：Tester从成功发送物理寻址开始计时到下一次发送物理寻址的时间间隔 ；
 **P3Client_Func**：Tester从成功发送功能寻址开始计时到下一次发送物理寻址的时间间隔 。
-- > 图片丢失，待补充
+- > [!warning] 图片丢失: Pasted image 20251009181751.png
+- > [!warning] 图片丢失: Pasted image 20251009181813.png
 **CANTP_TX_BURST_MODE** 
 CANTP_TX_BURST_MODE 是 AUTOSAR CAN Transport Layer (CANTP) 模块的一个配置参数。它主要用于控制发送方在传输多帧数据时的行为模式。
 

@@ -2,7 +2,7 @@
 title: Eth
 ---
 
-![Pasted image 20251107105034.png](./resources/Pasted-image-20251107105034.png)
+![Pasted-image-20251107105034.png](./resources/Pasted-image-20251107105034.png)
 
 包流动时，从前往后依此被附加了**以太网包首部、IP包首部、TCP包首部（或者UDP包首部）**以及应用自己的包首部和数据。而包的最后则追加了**以太网包尾**（包首部附加于包的前端，而包尾则指追加到包的后端的部分。） （Ethernet Trailer）。
 

@@ -2,79 +2,7 @@
 title: NVM
 ---
 
-![Pasted image 20260201113852.png](./resources/Pasted-image-20260201113852.png)
-
-
-### Basic storage objects
-
-A “Basic Storage Object” is the **smallest entity** of a “NVRAM block”. Several “Basic Objects” can be used to build a NVRAM Block. A “Basic Storage Object” can reside in **different memory locations** (RAM/ROM/NV memory).
-
-#### RAM Block
-
-The “RAM Block” is a “Basic Storage Object”. It represents the part of a “NVRAM Block” which resides i**n the RAM**.
-
-由什么组成呢？
-user data，CRC value (optionally)， NV block header(optionally)
-
-RAM block 对于NVRAM Block是可选的
-#### ROM Block
-
-The “ROM Block” is a “Basic Storage Object”. It represents the part of a “NVRAM
-Block” which resides in the ROM. The “ROM Block” is **an optional part** of a “NVRAM
-Block”
-
-ROM block 对于NVRAM Block是可选的
-#### NV Block
-The “NV Block” is a “Basic Storage Object”. It represents the part of a “NVRAM
-Block” which resides in the **NV memory.** The “NV Block” is **a mandatory part** of a
-“NVRAM Block”
-
-NV Block 对于NVRAM Block是强制要求的
-
-#### Administrative Block
-
-The “Administrative Block” is a “Basic Storage Object”. It resides **in RAM**. The “Administrative Block” is **a mandatory par**t of a “NVRAM Block”.
-Contents of Administrative Block are of non-persistent nature and resides **in the RAM**.
-
-It is used to hold attribute/error/status information of the corresponding NVRAM blocks well as the block indices specifically for NVRAM blocks of type 'Dataset’. This is **a mandatory part** of NVRAM block.
-### Block Management types
-
-#### Native NVRAM block
-
-The Native NVRAM block is the simplest block management type. It allows storage to/retrieval from NV memory with a minimal overhead.
-
-NVM_BLOCK_NATIVE type of NVRAM storage consists of the following basic storage objects:
-
-NV Blocks: 1
-RAM Blocks: 1
-ROM Blocks: 0..1
-Administrative Blocks:1
-
-### Redundant NVRAM block
-In addition to the Native NVRAM block, the Redundant NVRAM block provides enhanced fault tolerance, reliability and availability. It increases resistance against data corruption. **The Redundant NVRAM block consists of two NV blocks, a RAM block and an Administrative block**.
-In case NV Block associated with a Redundant NVRAM block is deemed invalid (e.g. during read), an attempt is made **to recover** the NV Block using data from the incorrupt NV Block.
-### Dataset NVRAM block
-The Dataset NVRAM block is an array of equally sized data blocks. The application can at one-time access exactly one of this data block.
-
-NVM_BLOCK_DATASET type of NVRAM storage consists of the following basic
-storage objects:
-NV Blocks: 1..NvMNvBlockNum
-RAM Blocks: 1
-ROM Blocks: 0..NvMRomBlockNum
-Administrative Blocks: 1
-
-The total number of configured datasets (NV+ROM blocks) must be in the range of 1..255.
-A specific dataset element is accessed by setting the corresponding index using the API NvM_SetDataIndex. Elements with an index from 0 up to NvMNvBlockNum - 1 represent the NV Blocks, while the ones with an index from NvMNvBlockNum up to NvMNvBlockNum +NvMRomBlockNum - 1 represent the ROM blocks. The NVRAM Block user has to ensure that a valid dataset index is selected before accessing data
-elements.
-
-
-### Synchronization Mechanism supported
-
-Two types of synchronization mechanisms are supported while accessing data to and from NvM module’s RAM mirror.
-在访问NvM模块的RAM镜像时，支持两种类型的同步机制。
-
-### Implicit synchronization
-![Pasted image 20260201113852.png](./resources/Pasted-image-20260201113852.png)
+![Pasted-image-20260201113852.png](./resources/Pasted-image-20260201113852.png)
 
 
 ### Basic storage objects
@@ -158,7 +86,7 @@ Two types of synchronization mechanisms are supported while accessing data to an
 In the Implicit synchronization, Application and NvM have concurrent access to a common RAM Block. Application writes/reads the data to/from RAM by invoking NvM API’s.
 在隐式同步中，应用程序和 NvM 可以同时（并发）访问公共 RAM 块。应用程序通过调用 NvM API 向 RAM 写入/读取数据。
 
-![Pasted image 20260201140210.png](./resources/Pasted-image-20260201140210.png)
+![Pasted-image-20260201140210.png](./resources/Pasted-image-20260201140210.png)
 In this case, RAM Block is mapped to one SW-C and sharing of RAM block is not recommendable. Whenever SW-C accesses NVRAM using RAM block (temporary /permanent), it has to ensure the data consistency of the RAM block until ongoing operation is completed by the NvM.
 在这种情况下，RAM 块被映射到一个 SW-C，不建议共享 RAM 块。每当 SW-C 使用 RAM 块访问 NVRAM（临时/永久）时，必须确保 RAM 块的数据一致性，直到 NvM 完成正在进行的操作。
 
@@ -193,7 +121,7 @@ ECU状态管理器可以通过轮询来获取请求的状态，也可以通过�
 
 In Explicit synchronization, NvM defines a RAM mirror which is used to exchange data with the RAM block of Application. Application writes the data in RAM block and invokes NvM write API. NvM invokes API to read the RAM mirror and data is copied from RAM mirror to RAM block and finally to NV block. The data is transferred by the application in both directions via callback routines, called by the NvM module.
 在显式同步中，NvM 定义了一个 RAM 镜像，用于与应用程序的 RAM 块交换数据。应用程序将数据写入 RAM 块并调用 NvM 写入 API。NvM 调用 API 读取 RAM 镜像，数据从 RAM 镜像复制到 RAM 块，最后复制到 NV 块。数据由应用程序通过 NvM 模块调用的回调例程在两个方向上传输。
-![Pasted image 20260201141104.png](./resources/Pasted-image-20260201141104.png)
+![Pasted-image-20260201141104.png](./resources/Pasted-image-20260201141104.png)
 
 The advantage is that applications can control their RAM block in an efficient way.
 They are responsible for copying consistent data to and from the NvM module’s RAM mirror using ReadRamBlockFromNvM / WriteRamBlockToNvM. Application has to ensure data integrity of RAM block while copying data to/from RAM mirror.
