@@ -18,8 +18,8 @@ AUTOSAR LdCom 模块使用 PDU 路由器的两套上层模块 API。即使用 TP
 
 When called by PduR LdCom shall use the passed PDU Id as Handle Id (LdComHandleIdECUC_LdCom_00005), to derive the actualAPI from configuration and use it when passing the call towards RTE.
 
-![Pasted image 20260222120646.png](./resources/Pasted image 20260222120646.png)
+![Pasted image 20260222120646.png](./resources/Pasted-image-20260222120646.png)
 
-![Pasted image 20260222120742.png](./resources/Pasted image 20260222120742.png)
+![Pasted image 20260222120742.png](./resources/Pasted-image-20260222120742.png)
 
-![Pasted image 20260222121015.png](./resources/Pasted image 20260222121015.png)
+![Pasted image 20260222121015.png](./resources/Pasted-image-20260222121015.png)

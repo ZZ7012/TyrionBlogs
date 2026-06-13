@@ -28,7 +28,7 @@ ComM aggregates the EIRA / ERA vectors from different bus systems resulting in o
 ERA 用于带转发的系统上。
 
 
-![Pasted image 20251111195432.png](./resources/Pasted image 20251111195432.png)
+![Pasted image 20251111195432.png](./resources/Pasted-image-20251111195432.png)
 
 
 The ComM module shall propagate a call of **ComM_GetCurrentComMode()** (see SWS_ComM_00083) to the Bus State Manager module(s) for the channel(s) the user are configured to (see also SWS_ComM_00176 and SWS_ComM_00798)⌋
@@ -58,4 +58,4 @@ ComM aggregates the EIRA / ERA vectors from different bus systems resulting in o
 ERA 用于带转发的系统上。
 
 
-![Pasted image 20251111195432.png](./resources/Pasted image 20251111195432.png)
+![Pasted image 20251111195432.png](./resources/Pasted-image-20251111195432.png)

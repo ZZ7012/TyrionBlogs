@@ -4,31 +4,21 @@ import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "https://mister-hope.github.io",
+  hostname: "https://ZZ7012.github.io",
 
   author: {
     name: "Tyrion",
     url: "https://github.com/ZZ7012",
   },
 
-  logo: "https://theme-hope-assets.vuejs.press/logo.svg",
+  logo: "/logo.svg",
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "ZZ7012/TyrionBlogs",
 
   docsDir: "src",
 
   blog: {
-    medias: {
-      BiliBili: "https://example.com",
-      Email: "mailto:info@example.com",
-      GitHub: "https://example.com",
-      Gmail: "mailto:info@example.com",
-      Instagram: "https://example.com",
-      Linkedin: "https://example.com",
-      QQ: "https://example.com",
-      Wechat: "https://example.com",
-      Zhihu: "https://example.com",
-    },
+    medias: {},
   },
 
   locales: {
@@ -39,13 +29,10 @@ export default hopeTheme({
       // sidebar
       sidebar: enSidebar,
 
-      footer: "Default footer",
-
       displayFooter: true,
 
       blog: {
-        description: "A FrontEnd programmer",
-        intro: "/intro.html",
+        description: "AUTOSAR & Automotive Electronics",
       },
 
       metaLocales: {
@@ -63,31 +50,15 @@ export default hopeTheme({
       // sidebar
       sidebar: zhSidebar,
 
-      footer: "默认页脚",
-
       displayFooter: true,
 
       blog: {
-        description: "一个前端开发者",
-        intro: "/zh/intro.html",
+        description: "AUTOSAR 与汽车电子技术博客",
       },
 
       // page meta
       metaLocales: {
         editLink: "在 GitHub 上编辑此页",
-      },
-    },
-  },
-
-  encrypt: {
-    config: {
-      "/demo/encrypt.html": {
-        hint: "Password: 1234",
-        password: "1234",
-      },
-      "/zh/demo/encrypt.html": {
-        hint: "Password: 1234",
-        password: "1234",
       },
     },
   },
@@ -128,53 +99,10 @@ export default hopeTheme({
     tabs: true,
     tasklist: true,
     vPre: true,
-
-    // uncomment these if you need TeX support
-    // math: {
-    //   // install katex before enabling it
-    //   type: "katex",
-    //   // or install @mathjax/src before enabling it
-    //   type: "mathjax",
-    // },
-
-    // install chart.js before enabling it
-    // chartjs: true,
-
-    // install echarts before enabling it
-    // echarts: true,
-
-    // install flowchart.ts before enabling it
-    // flowchart: true,
-
-    // install mermaid before enabling it
-    // mermaid: true,
-
-    // playground: {
-    //   presets: ["ts", "vue"],
-    // },
-
-    // install @vue/repl before enabling it
-    // vuePlayground: true,
-
-    // install sandpack-vue3 before enabling it
-    // sandpack: true,
-
-    // install @vuepress/plugin-revealjs and uncomment these if you need slides
-    // revealjs: {
-    //   plugins: ["highlight", "math", "search", "notes", "zoom"],
-    // },
   },
 
   plugins: {
     blog: true,
-
-    // Install @waline/client before enabling it
-    // Note: This is for testing ONLY!
-    // You MUST generate and use your own comment service in production.
-    // comment: {
-    //   provider: "Waline",
-    //   serverURL: "https://waline-comment.vuejs.press",
-    // },
 
     components: {
       components: ["Badge", "VPCard"],
@@ -183,62 +111,5 @@ export default hopeTheme({
     icon: {
       prefix: "fa6-solid:",
     },
-
-    // install @vuepress/plugin-pwa and uncomment these if you want a PWA
-    // pwa: {
-    //   favicon: "/favicon.ico",
-    //   cacheHTML: true,
-    //   cacheImage: true,
-    //   appendBase: true,
-    //   apple: {
-    //     icon: "/assets/icon/apple-icon-152.png",
-    //     statusBarColor: "black",
-    //   },
-    //   msTile: {
-    //     image: "/assets/icon/ms-icon-144.png",
-    //     color: "#ffffff",
-    //   },
-    //   manifest: {
-    //     icons: [
-    //       {
-    //         src: "/assets/icon/chrome-mask-512.png",
-    //         sizes: "512x512",
-    //         purpose: "maskable",
-    //         type: "image/png",
-    //       },
-    //       {
-    //         src: "/assets/icon/chrome-mask-192.png",
-    //         sizes: "192x192",
-    //         purpose: "maskable",
-    //         type: "image/png",
-    //       },
-    //       {
-    //         src: "/assets/icon/chrome-512.png",
-    //         sizes: "512x512",
-    //         type: "image/png",
-    //       },
-    //       {
-    //         src: "/assets/icon/chrome-192.png",
-    //         sizes: "192x192",
-    //         type: "image/png",
-    //       },
-    //     ],
-    //     shortcuts: [
-    //       {
-    //         name: "Demo",
-    //         short_name: "Demo",
-    //         url: "/demo/",
-    //         icons: [
-    //           {
-    //             src: "/assets/icon/guide-maskable.png",
-    //             sizes: "192x192",
-    //             purpose: "maskable",
-    //             type: "image/png",
-    //           },
-    //         ],
-    //       },
-    //     ],
-    //   },
-    // },
   },
 });
